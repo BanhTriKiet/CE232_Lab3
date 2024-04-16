@@ -201,9 +201,7 @@ void task_ssd1306_display_text(const uint8_t *text)
         idString[i] = text[i];
     }
     i2c_cmd_handle_t cmd;
-
     uint8_t cur_page = 0;
-
     cmd = i2c_cmd_link_create();
     i2c_master_start(cmd);
     i2c_master_write_byte(cmd, (OLED_I2C_ADDRESS << 1) | I2C_MASTER_WRITE, true);
@@ -278,7 +276,7 @@ static const uint16_t character_declaration_uuid = ESP_GATT_UUID_CHAR_DECLARE;
 static const uint16_t character_user_description = ESP_GATT_UUID_CHAR_DESCRIPTION;
 
 static const uint8_t char_prop_read_write = ESP_GATT_CHAR_PROP_BIT_WRITE | ESP_GATT_CHAR_PROP_BIT_READ;
-static const uint8_t char1_name[] = "Char_1_Short_WR";
+static const uint8_t char1_name[] = "Write_Student_id";
 
 static const uint8_t char_value[8] = {0x11, 0x22, 0x33, 0x44};
 
